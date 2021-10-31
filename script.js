@@ -14,7 +14,7 @@ const btnRoll = document.querySelector('.btn--roll');
 const btnHold = document.querySelector('.btn--hold');
 const btnReset = document.querySelector('.btn--new');
 
-const winningScore = 10;
+const winningScore = 100;
 let score, currentScore, activePlayer, playing, oldDiceRoll;
 //Initial setup function
 const init = () => {
