@@ -16,7 +16,7 @@ const btnReset = document.querySelector('.btn--new');
 
 const winningScore = 100;
 document.getElementById('score-number').textContent = winningScore;
-const tries = 12;
+const tries = 8;
 let sessions, score, currentScore, activePlayer, playing, oldDiceRoll;
 
 //Random tries dunction
