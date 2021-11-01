@@ -73,11 +73,9 @@ const rollDiceFunction = () => {
     // 1. Generating a random dice roll
     const dice = rollDiceValue();
     sessions -= 1;
-    console.log(sessions);
     // 2. Display dice
     diceEl.classList.remove('hidden');
     diceEl.src = `dice-${dice}.png`;
-    // console.log(dice);
     // 3. Check for a rolled 1: if true
     if (sessions !== 0) {
       //Add dice to the current score
