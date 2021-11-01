@@ -131,12 +131,15 @@ main {
 
 .btn--new {
   top: 4rem;
+  display: none;
 }
 .btn--roll {
   top: 39.3rem;
+  display: none;
 }
 .btn--hold {
   top: 46.1rem;
+  display: none;
 }
 
 .btn:active {
@@ -160,6 +163,12 @@ main {
 .player--winner {
   background-color: #2f2f2f;
 }
+.win-msg {
+  display: none;
+}
+.player--winner .win-msg {
+  display: inline;
+}
 
 .player--winner .name {
   font-weight: 700;
@@ -167,4 +176,49 @@ main {
 }
 .hidden {
   display: none;
+}
+div.instructions {
+  display: flex;
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  /* transform: translate(0, -50%); */
+  width: 250px;
+}
+div.keys {
+  margin: 0 auto;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+}
+div.key {
+  margin: 10px 10px;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+
+  font-size: 1.5rem;
+  color: rgb(226, 203, 203);
+  font-weight: 400;
+}
+div.inst {
+  align-self: flex-start;
+  flex-flow: column nowrap;
+  align-items: flex-start;
+}
+div.inst p {
+  font-weight: 700;
+  font-size: 1.6rem;
+}
+div.inst ul {
+  margin-left: 20px;
+}
+div.inst li {
+  margin-top: 5px;
+  list-style-type: disc;
+  list-style-position: outside;
+}
+div.key img {
+  width: 40px;
+  margin-right: 12px;
 }

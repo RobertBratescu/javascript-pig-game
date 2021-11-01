@@ -15,7 +15,16 @@ const btnHold = document.querySelector('.btn--hold');
 const btnReset = document.querySelector('.btn--new');
 
 const winningScore = 100;
-let score, currentScore, activePlayer, playing, oldDiceRoll;
+document.getElementById('score-number').textContent = winningScore;
+const tries = 12;
+let sessions, score, currentScore, activePlayer, playing, oldDiceRoll;
+
+//Random tries dunction
+const randomTries = arg => {
+  let tries = Math.trunc(Math.random() * (arg - 1)) + 2;
+  console.log(tries);
+  return tries;
+};
 //Initial setup function
 const init = () => {
   score = [0, 0];
@@ -23,6 +32,7 @@ const init = () => {
   activePlayer = 0;
   playing = true;
   oldDiceRoll = 0;
+  sessions = randomTries(tries);
 
   score0El.textContent = 0;
   score1El.textContent = 0;
@@ -53,18 +63,23 @@ const switchPlayer = () => {
   activePlayer = activePlayer === 0 ? 1 : 0;
   player0EL.classList.toggle('player--active');
   player1EL.classList.toggle('player--active');
+  diceEl.classList.add('hidden');
+  sessions = randomTries(tries);
 };
+
 //Setting up the function to roll the dice
 const rollDiceFunction = () => {
   if (playing) {
     // 1. Generating a random dice roll
     const dice = rollDiceValue();
+    sessions -= 1;
+    console.log(sessions);
     // 2. Display dice
     diceEl.classList.remove('hidden');
     diceEl.src = `dice-${dice}.png`;
     // console.log(dice);
     // 3. Check for a rolled 1: if true
-    if (dice !== 1) {
+    if (sessions !== 0) {
       //Add dice to the current score
       currentScore += dice;
       document.getElementById(`current--${activePlayer}`).textContent =
@@ -77,7 +92,7 @@ const rollDiceFunction = () => {
 };
 //Setting up the function to hold the score
 const holdScoreFunction = () => {
-  if (playing) {
+  if (playing && currentScore != 0) {
     // 1. Add current score to active player's score
     score[activePlayer] += currentScore;
     document.getElementById(`score--${activePlayer}`).textContent =
@@ -106,8 +121,8 @@ btnReset.addEventListener('click', init);
 btnRoll.addEventListener('click', rollDiceFunction);
 btnHold.addEventListener('click', holdScoreFunction);
 document.addEventListener('keydown', e => {
-  console.log(e.code);
+  // console.log(e.code);
   if (e.code === 'KeyR') rollDiceFunction();
   if (e.code === 'KeyE') holdScoreFunction();
-  if (e.code === 'Backspace') init();
+  if (e.code === 'KeyN') init();
 });

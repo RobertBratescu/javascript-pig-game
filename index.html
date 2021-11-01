@@ -8,9 +8,43 @@
     <title>Pig Game</title>
   </head>
   <body>
+    <div class="instructions">
+      <div class="keys">
+        <div class="key">
+          <img src="r.png" alt="" />Press R to roll the dice
+        </div>
+        <div class="key">
+          <img src="e.png" alt="" />Press E to hold the current score
+        </div>
+        <div class="key">
+          <img src="n.png" alt="" />Press N to restart the game
+        </div>
+        <div class="key inst">
+          <p>How to play:</p>
+          <ul>
+            <li>Roll the dice;</li>
+            <li>
+              Hold the score. The game switches to the other player after each
+              hold.
+            </li>
+            <li>
+              The first person to reach a score of
+              <span id="score-number">0</span> wins;
+            </li>
+          </ul>
+          <p>
+            <br />
+            ATENTION! The game also switches to the other player after a random
+            number of rolls. All score not held before the switch will be lost.
+          </p>
+        </div>
+      </div>
+    </div>
     <main>
       <section class="player player--0 player--active">
-        <h2 class="name" id="name--0">Player 1</h2>
+        <h2 class="name" id="name--0">
+          Player 1 <span class="win-msg">wins</span>
+        </h2>
         <p class="score" id="score--0">43</p>
         <div class="current">
           <p class="current-label">Current</p>
@@ -18,7 +52,9 @@
         </div>
       </section>
       <section class="player player--1">
-        <h2 class="name" id="name--1">Player 2</h2>
+        <h2 class="name" id="name--1">
+          Player 2 <span class="win-msg">wins</span>
+        </h2>
         <p class="score" id="score--1">24</p>
         <div class="current">
           <p class="current-label">Current</p>
