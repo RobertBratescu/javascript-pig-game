@@ -62,7 +62,7 @@ const rollDiceFunction = () => {
     // 2. Display dice
     diceEl.classList.remove('hidden');
     diceEl.src = `dice-${dice}.png`;
-    console.log(dice);
+    // console.log(dice);
     // 3. Check for a rolled 1: if true
     if (dice !== 1) {
       //Add dice to the current score
@@ -106,7 +106,7 @@ btnReset.addEventListener('click', init);
 btnRoll.addEventListener('click', rollDiceFunction);
 btnHold.addEventListener('click', holdScoreFunction);
 document.addEventListener('keydown', e => {
-  console.log(e.code);
+  // console.log(e.code);
   if (e.code === 'ControlRight') rollDiceFunction();
   if (e.code === 'ControlLeft') holdScoreFunction();
   if (e.code === 'Backspace') init();
