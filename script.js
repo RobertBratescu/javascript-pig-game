@@ -106,8 +106,8 @@ btnReset.addEventListener('click', init);
 btnRoll.addEventListener('click', rollDiceFunction);
 btnHold.addEventListener('click', holdScoreFunction);
 document.addEventListener('keydown', e => {
-  // console.log(e.code);
-  if (e.code === 'ControlRight') rollDiceFunction();
-  if (e.code === 'ControlLeft') holdScoreFunction();
+  console.log(e.code);
+  if (e.code === 'KeyR') rollDiceFunction();
+  if (e.code === 'KeyE') holdScoreFunction();
   if (e.code === 'Backspace') init();
 });
